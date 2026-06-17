@@ -2,7 +2,7 @@ import os
 import re
 from typing import Any
 
-from config import OPENAI_API_KEY, OPENAI_BASE_URL, SIM_PARAMS
+from config import OPENAI_API_KEY, OPENAI_BASE_URL, SIM_PARAMS, DEEPSEEK_API_KEY, DEEPSEEK_BASE_URL, DEEPSEEK_MODEL
 
 
 class LLMClient:
@@ -17,15 +17,23 @@ class LLMClient:
         self.provider = provider or SIM_PARAMS.get("llm_provider", "mock")
         self.model = model or self._default_model()
         self.client: Any | None = None
-        if self.provider == "openai":
+
+        if self.provider in {"openai", "deepseek"}:
             from openai import OpenAI
 
-            kwargs: dict[str, Any] = {"api_key": OPENAI_API_KEY}
-            if OPENAI_BASE_URL:
-                kwargs["base_url"] = OPENAI_BASE_URL
-            self.client = OpenAI(**kwargs)
+            if self.provider == "deepseek":
+                self.client = OpenAI(api_key=DEEPSEEK_API_KEY, base_url=DEEPSEEK_BASE_URL)
+            else:
+       # if self.provider == "openai":
+       #     from openai import OpenAI
+                kwargs: dict[str, Any] = {"api_key": OPENAI_API_KEY}
+                if OPENAI_BASE_URL:
+                    kwargs["base_url"] = OPENAI_BASE_URL
+                self.client = OpenAI(**kwargs)
 
     def _default_model(self) -> str:
+        if self.provider == "deepseek":
+            return DEEPSEEK_MODEL
         mtype = SIM_PARAMS.get("gpt_type", 0)
         if mtype == 0:
             return os.getenv("AGENT4EDU_OPENAI_MODEL", "gpt-3.5-turbo-1106")
@@ -36,10 +44,12 @@ class LLMClient:
     def call(self, messages: list[dict[str, str]]) -> str:
         if self.provider == "mock":
             return self._mock_call(messages)
-        if self.provider != "openai":
+        if self.provider not in {"openai", "deepseek"}:
             raise ValueError(f"Unsupported LLM provider: {self.provider}")
-        if not OPENAI_API_KEY:
+        if self.provider == "openai" and not OPENAI_API_KEY:
             raise RuntimeError("OPENAI_API_KEY is empty. Set it or use AGENT4EDU_LLM_PROVIDER=mock.")
+        if self.provider == "deepseek" and not DEEPSEEK_API_KEY:
+            raise RuntimeError("DEEPSEEK_API_KEY is empty. Set it or use AGENT4EDU_LLM_PROVIDER=mock.") 
         assert self.client is not None
         resp = self.client.chat.completions.create(
             model=self.model,

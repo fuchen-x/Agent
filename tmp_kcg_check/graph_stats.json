@@ -1,0 +1,15 @@
+{
+    "concept_count": 22,
+    "transition_pair_count": 26,
+    "candidate_edge_count": 26,
+    "selected_edge_count": 16,
+    "min_transition_count": 1,
+    "threshold": 0.14341234550610976,
+    "min_strength": 0.5,
+    "max_strength": 1.0,
+    "knowledge_id_offset": 0,
+    "directed_edge_count": 14,
+    "undirected_edge_count": 1,
+    "agent_edge_count": 16,
+    "agent_relation_scope": "all"
+}

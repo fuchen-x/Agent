@@ -1,0 +1,8 @@
+{
+    "student_id": 5,
+    "num_steps": 45,
+    "task1_accuracy": 0.4888888888888889,
+    "task2_accuracy": 0.6222222222222222,
+    "task4_accuracy": 0.4666666666666667,
+    "has_dneuralcdm_proficiency": false
+}

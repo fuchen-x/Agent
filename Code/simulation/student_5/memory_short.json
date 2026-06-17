@@ -1,0 +1,32 @@
+[
+    [
+        "Three straight wires PQR with current flowing through them are placed parallel and perpendicular to the plane of the paper. The direction of the current in each wire is perpendicular to the plane of the paper, and the distance between any two wires is equal. The direction of the magnetic induction at the midpoint O of PQ is <TARGET><IMG>",
+        "superposition of magnetic fields",
+        1,
+        1
+    ],
+    [
+        "As shown in the figure, two parallel straight conductors cd and ef are vertically placed with opposite directions and equal currents. Points a and b are located in the plane of the two conductors.",
+        "the interaction between parallel current-carrying straight conductors",
+        1,
+        4
+    ],
+    [
+        "What is the angle θ at which a smooth inclined plane should be placed so that a long conductor rod of mass m and length L, placed vertically on the inclined plane, with a uniform magnetic field perpendicular to the inclined plane and a current I flowing through the conductor rod, remains stationary on the inclined plane with gravity acceleration g?",
+        "mechanical equilibrium problems under the action of ampere force",
+        1,
+        4
+    ],
+    [
+        "Hang the circular wire coil with a thin wire near the energized straight wire so that both are in the same vertical plane. The straight wire fixes the coil while allowing it to move freely. The circular coil carries a current in the direction shown in the diagram.",
+        "the magnetic field around the electric current and ampere's law",
+        1,
+        3
+    ],
+    [
+        "Schematic diagram of the working principle of a mass spectrometer: Charged particles are accelerated by an electric field and then enter a velocity selector. Inside the velocity selector, there is a mutually orthogonal uniform magnetic field and a uniform electric field. The magnetic induction intensity is B and the electric field intensity is E. After passing through the velocity selector in a straight line, the particles pass through the slit P on the plate S and then reach the recording particle position film A_{1}A_{2}. Below plate S, the correct statement about the uniform magnetic field intensity B_{0} is <TARGET><IMG>",
+        "speed selector",
+        1,
+        2
+    ]
+]

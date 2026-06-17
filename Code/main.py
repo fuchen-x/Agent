@@ -16,7 +16,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--students", type=str, default="0", help="Comma-separated row indices in stu_logs.json. Example: 0,1,2")
     parser.add_argument("--student-ids", action="store_true", help="Treat --students as actual user_id values instead of row indices.")
     parser.add_argument("--max-steps", type=int, default=0, help="Max exercises per student. 0 means all logs.")
-    parser.add_argument("--llm-provider", type=str, default=None, choices=["mock", "openai"], help="Override AGENT4EDU_LLM_PROVIDER.")
+    parser.add_argument("--llm-provider", type=str, default=None, choices=["mock", "openai","deepseek"], help="Override AGENT4EDU_LLM_PROVIDER.")
     return parser.parse_args()
 
 

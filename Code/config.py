@@ -9,6 +9,11 @@ RESULT_PATH = Path(os.getenv("AGENT4EDU_RESULT_PATH", BASE_DIR / "simulation"))
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "")
 
+# DeepSeek configuration. The DeepSeek API is OpenAI-compatible.
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
+DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
+DEEPSEEK_MODEL = os.getenv("AGENT4EDU_DEEPSEEK_MODEL", os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"))
+
 SIM_PARAMS = {
     "memory_source": os.getenv("AGENT4EDU_MEMORY_SOURCE", "real"),
     "learning_effect": os.getenv("AGENT4EDU_LEARNING_EFFECT", "yes"),
